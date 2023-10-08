@@ -1,2 +1,2 @@
 # GMT_Examples
-GMT Examples for geomatics engineering.
+GMT Examples for Geomatics Engineering.
