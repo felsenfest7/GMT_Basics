@@ -10,5 +10,16 @@ GMT can be utilized across various programs or programming languages, including 
 
 ## GMT SYNTAX
 
-GMT has a different and complex syntax in terms of other programming languages such as Python or C#; because. In order to use GMT on Linux, first of all a shell (.sh) file have to be created, and afterwards that file should be started with #!bin/bash comment in order to specifiy which shell a .sh script will be executed with and ensures the script's portability and executability in a broader context. So the heading a shell file should be seen like below.
+GMT has a different and complex syntax in terms of other programming languages such as Python or C#; because. In order to use GMT on Linux, first of all a shell (.sh) file have to be created, and afterwards that file should be started with #!/bin/bash comment in order to specifiy which shell a .sh script will be executed with and ensures the script's portability and executability in a broader context. So the heading a shell file should be seen like below.
 
+```
+#!/bin/bash
+```
+
+The second step is specifying the starting and ending places of code. It is gmt begin and gmt end commands for GMT. Other codes that are used for visualizing the data are written between those commands.
+
+```
+gmt begin my_first_plot
+  #Other codes are written in here with an indentation.
+gmt end show
+```
