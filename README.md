@@ -35,7 +35,52 @@ gmt end show
 
 As previously mentioned, GMT is frequently used by geomatics engineering for the visualization of spatial data because it has many different features. In this section, more than one projection is mentioned and examples are created. Firstly, projection means the presentation of curves or surfaces on a map with using geometric and mathematical equalities. Those projections could be geographic or non-geographic. Geographic projections are used for geodesy; however, non-geographic projections cannot be used for geodesy. They are created in order to obtaining a presentation of Earth with a general perspective. Also projection processing is done via surfaces which are flattenable such as conic, cyclinder or plane.
 
+### Mercator Projection
 For example, Mercator Projection uses a azimuthal cylinder. That cylinder wrap Earth from its equator line.
+
+<p align = "center">
+<img src=https://cdn.britannica.com/55/109155-050-9FE4B08C/simple-cylindrical-projection-earth-map-globe-mercator.jpg height="300" alt="Mercator Projection">
+</p>
+
+In order to create a map with Mercator projection below code of GMT should be written.
+
+```
+#!/bin/bash
+
+gmt begin mercator pdf
+
+	gmt coast -R25/45/35/44 -Jm0.8 -Dh -Ggray -Slightblue -Wthinnest -B2.5g2.5 -B+t"Türkiye Map with Mercator Projection" -N1 -Ia/79/148/205 -Tdg43.8/43+w0.4i+f1+jcm+l,,,,
+	
+	echo 43.8 43.7 N | gmt text  -F+f7p,Helvetica,black
+
+gmt end show
+```
+
+Its output is in the below:
+
+<p align = "center">
+<img src="https://github.com/felsenfest7/GMT_Examples/assets/92101782/13bb0c9f-f646-4250-ab5d-686f825f3d43" width="700" height=500" alt="Mercator Map">
+</p>
+
+In above code:
+* ***gmt coast***: It is used for plotting continents, countries, shorelines, rivers, and borders.
+* ***-R***: It describes the region of that will be drawn. It uses as -Rlower_long/higher_long/lower_lat_higher_lat.
+* ***-J***: It is used for describing the projection type. In that example Mercator projection is used and because of that -J has a additional later _m_ to describe Mercator projection. Also _0.8_ means scale along paralels.
+* ***-D***: It is resolution of map objects (the lands). It could be used with _l (lower), _i (intermediate)_, _h (high_ or _f_ (full).
+* ***-G***: It is color of lands.
+* ***-S***: It is color of water objects.
+* ***-W***: It is proporties of pen that uses to draw coasts.
+* ***-B***: It is the boundaries of map. In that example 2.5/2.5 latitude and longitude spacing are used and they are drawed with _g_ command.
+
+
+
+
+
+
+
+
+
+
 
 
 
