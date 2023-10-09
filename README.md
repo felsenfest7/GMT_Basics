@@ -71,6 +71,10 @@ In above code:
 * ***-S***: It is color of water objects.
 * ***-W***: It is proporties of pen that uses to draw coasts.
 * ***-B***: It is the boundaries of map. In that example 2.5/2.5 latitude and longitude spacing are used and they are drawed with _g_ command.
+* ***-B+t"text"***: It is used for giving a title of map.
+* ***-N***: It is used for drawing political boundaries. It could be also used with other options. For example, _1_ for political boundaries, _2_ for state boundaries within the Americas, _3_ for marine boundaries, and _a_ for all boundaries.
+* ***-I***: It is used for drawing rivers and has lots of properties. _a_ means all rivers and canals and _79/148/205_ is the RGB color code for rivers and canals.
+* ***-Td***: 
 
 
 
