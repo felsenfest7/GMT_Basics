@@ -103,7 +103,24 @@ Its output is in the below:
 
 In above code, the projection system is identified with _-Jt35/0.3i_. The _t_ describes the projection type, _35_ describes the central meridian in order to project the Earth and _0.3i_ is the scale.
 
+### Universal Transversal Mercator (UTM) Projection
 
+Universal Transversal Mercator also used a horizontal cylinder and that cylinder again tangent to a meridian. It is used in order to project the wider areas of Earth. THe output coordinate system is called as (Easting-Norting, in Turkish Sağa-Yukarı). As a result of the application of this projection, the world turns into 6 degree slices.
 
+In order to create a map with Mercator projection below code of GMT should be written.
 
+```
+#!/bin/bash
 
+gmt begin transversal_mercator pdf
+
+	gmt coast -R25/45/35/44 -Ju35/0.3i -Dh -Ggray -Slightblue -Wthinnest -B2.5g2.5 -B+t"Türkiye Map with Mercator Projection" -N1 -Ia/79/148/205 
+	
+gmt end show
+```
+
+Its output is in the below:
+
+<p align = "center">
+<img src="https://github.com/felsenfest7/GMT_Examples/assets/92101782/4faa8aae-3235-4893-9b6d-e24183d88665" width="700" height=500" alt="Mercator Map">
+</p>
