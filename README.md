@@ -36,7 +36,7 @@ gmt end show
 As previously mentioned, GMT is frequently used by geomatics engineering for the visualization of spatial data because it has many different features. In this section, more than one projection is mentioned and examples are created. Firstly, projection means the presentation of curves or surfaces on a map with using geometric and mathematical equalities. Those projections could be geographic or non-geographic. Geographic projections are used for geodesy; however, non-geographic projections cannot be used for geodesy. They are created in order to obtaining a presentation of Earth with a general perspective. Also projection processing is done via surfaces which are flattenable such as conic, cyclinder or plane.
 
 ### Mercator Projection
-For example, Mercator Projection uses a azimuthal cylinder. That cylinder wrap Earth from its equator line.
+Mercator Projection uses a azimuthal cylinder. That cylinder wrap Earth from its equator line.
 
 <p align = "center">
 <img src=https://cdn.britannica.com/55/109155-050-9FE4B08C/simple-cylindrical-projection-earth-map-globe-mercator.jpg height="300" alt="Mercator Projection">
@@ -76,14 +76,32 @@ In above code:
 * ***-I***: It is used for drawing rivers and has lots of properties. _a_ means all rivers and canals and _79/148/205_ is the RGB color code for rivers and canals.
 * ***-Td***: It could be used for drawing shapes like north arrow in the map. First attributes are the location of shape, _+w_ for width of shape, _+f_ for orientations of shape, _+j_ for justification, _+l,,,,_ for label the cardinal points.
 
+### Transversal Mercator (Gauss-Krüger) Projection
 
+Transversal Mercator (Gauss-Krüger) Projection uses a cylinder that is horizontal and wrap earth with tangent to a meridian. That projection system is widely used by many countries such as Türkiye. The output coordinate system is describing as X-Y. As a result of the application of this projection, the world turns into 3 degree slices.
 
+<p align = "center">
+<img src=https://gisgeography.com/wp-content/uploads/2016/05/Universe-Transverse-Mercator-Cylinder.png height="300" alt="Transversal Mercator Projection">
+</p>
 
+In order to create a map with Mercator projection below code of GMT should be written.
 
+```
+#!/bin/bash
 
+gmt begin transversal_mercator pdf
 
+	gmt coast -R25/45/35/44 -Jt35/0.3i -Dh -Ggray -Slightblue -Wthinnest -B2.5g2.5 -B+t"Türkiye Map with Mercator Projection" -N1 -Ia/79/148/205 
+	
+gmt end show
+```
+Its output is in the below:
 
+<p align = "center">
+<img src="https://github.com/felsenfest7/GMT_Examples/assets/92101782/d79cbc92-78ea-4bb8-9fa5-8ba6d2f1308d" width="700" height=500" alt="Mercator Map">
+</p>
 
+In above code, the projection system is identified with _-Jt35/0.3i_. The _t_ describes the projection type, _35_ describes the central meridian in order to project the Earth and _0.3i_ is the scale.
 
 
 
