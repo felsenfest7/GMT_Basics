@@ -16,10 +16,27 @@ GMT has a different and complex syntax in terms of other programming languages s
 #!/bin/bash
 ```
 
-The second step is specifying the starting and ending places of code. It is gmt begin and gmt end commands for GMT. Other codes that are used for visualizing the data are written between those commands.
+The second step is specifying the starting and ending places of code. It is _gmt begin_ and _gmt end_ commands for GMT. Other codes that are used for visualizing the data are written between those commands.
 
 ```
 gmt begin my_first_plot
   #Other codes are written in here with an indentation.
 gmt end show
 ```
+
+In above code, after _gmt begin_ command the section name should be written. It is used for giving name to output of code. Also in order to show output of code _show_ command should be writtern after _gmt end_. Lastly, in order to get different types of outputs such as _png_ or _pdf_, after _gmt begin <section_name>_ _pdf_ or _png_ commands could be writtern. For example below code returns the output as a pdf file:
+
+```
+gmt begin output_types pdf
+  #Codes
+gmt end show
+```
+## GMT PROJECTIONS
+
+As previously mentioned, GMT is frequently used by geomatics engineering for the visualization of spatial data because it has many different features. In this section, more than one projection is mentioned and examples are created. Firstly, projection means the presentation of curves or surfaces on a map with using geometric and mathematical equalities. Those projections could be geographic or non-geographic. Geographic projections are used for geodesy; however, non-geographic projections cannot be used for geodesy. They are created in order to obtaining a presentation of Earth with a general perspective. Also projection processing is done via surfaces which are flattenable such as conic, cyclinder or plane.
+
+
+
+
+
+
