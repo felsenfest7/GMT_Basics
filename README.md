@@ -107,12 +107,12 @@ In above code, the projection system is identified with _-Jt35/0.3i_. The _t_ de
 
 Universal Transversal Mercator also used a horizontal cylinder and that cylinder again tangent to a meridian. It is used in order to project the wider areas of Earth. THe output coordinate system is called as (Easting-Norting, in Turkish Sağa-Yukarı). As a result of the application of this projection, the world turns into 6 degree slices.
 
-In order to create a map with Mercator projection below code of GMT should be written.
+In order to create a map with Universal Mercator projection below code of GMT should be written.
 
 ```
 #!/bin/bash
 
-gmt begin transversal_mercator pdf
+gmt begin universal_transversal_mercator pdf
 
 	gmt coast -R25/45/35/44 -Ju35/0.3i -Dh -Ggray -Slightblue -Wthinnest -B2.5g2.5 -B+t"Türkiye Map with Mercator Projection" -N1 -Ia/79/148/205 
 	
@@ -122,5 +122,46 @@ gmt end show
 Its output is in the below:
 
 <p align = "center">
-<img src="https://github.com/felsenfest7/GMT_Examples/assets/92101782/4faa8aae-3235-4893-9b6d-e24183d88665" width="700" height=500" alt="Mercator Map">
+<img src="https://github.com/felsenfest7/GMT_Examples/assets/92101782/d973087d-0e79-41b5-a42f-ac4aa2bbe83a" width="700" height=500" alt="Mercator Map">
 </p>
+
+In above code, the projection system is identified with _-Ju35/0.3i_. The _u_ describes the projection system and _35_ is the UTM zone.
+
+### Orthographic Projection
+
+Orthographic projection is one of the non-geographical projection systems. It is used for genearal view of Earth and cannot be used for geodesy.
+
+In order to create a map with Universal Mercator projection below code of GMT should be written.
+
+```
+#!/bin/bash
+
+gmt begin orthograpgic png
+
+	gmt coast -Rg -JG35/40/4.5i -Dh -Ggray -Slightblue -B10g10 -B+t"Orthographic Projection" 
+
+gmt end show
+```
+
+Its output is in the below:
+
+<p align = "center">
+<img src="https://github.com/felsenfest7/GMT_Examples/assets/92101782/ff4df7bc-ec27-4f3a-8256-64db24a10524" width="400" height=500" alt="Mercator Map">
+</p>
+
+In above code, the projection system is described with _-JG_. The _35/40_ means the perspective and _4.5i_ is the scale. Also _-Rg_ means 0 to 360 degrees along through longitudes and -90 to 90 degrees along through latitudes.
+
+## PLOTTING DATA
+
+
+
+
+
+
+
+
+
+
+
+
+
